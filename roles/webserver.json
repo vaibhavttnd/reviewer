@@ -1,0 +1,4 @@
+{
+  "name": "webserver",
+  "run_list": ["recipe[i::default]"]
+}
