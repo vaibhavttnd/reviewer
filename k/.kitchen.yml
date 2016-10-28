@@ -1,0 +1,24 @@
+---
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+  environments_path: ../environments/
+  client_rb:
+    environment: production
+
+verifier:
+  name: inspec
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: default
+    run_list:
+      - recipe[k::httpd]
+    verifier:
+      inspec_tests:
+        - test/recipes
+    attributes:

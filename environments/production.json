@@ -5,7 +5,7 @@
 "json_class": "Chef::Environment",
 "default_attributes": {
 "httpd": {
-"version": "2.2.29"
+"version": "2.2.20"
 }
 },
 "override_attributes": {},
