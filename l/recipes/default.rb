@@ -19,10 +19,12 @@ end
 
 execute 'my-cnf' do
 command "scp -i ~/Downloads/vg.pem /tmp/grant#{result['ipaddress']}.sh ubuntu@54.158.123.226:/tmp/grant#{result['ipaddress']}.sh"
+notifies :run, "execute[my-cnf]", :immediately
 end
 
 execute 'my-cnf' do
 command "ssh -i ~/Downloads/vg.pem ubuntu@54.158.123.226 'bash /tmp/grant#{result['ipaddress']}.sh'"
+action :nothing
 end
 
 end

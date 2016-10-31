@@ -14,8 +14,10 @@ template "/tmp/s3_upload.sh" do
      :access_key => node["access_key"],
      :secret_key => node["secret_key"]
    )
+   notifies :run, "execute[s3-upload-file]", :immediately
 end
 
 execute 's3-upload-file' do
   command 'bash /tmp/s3_upload.sh'
+  action :nothing
 end

@@ -1,6 +1,6 @@
 {
-"name": "staging",
-"description": "This is a staging environment defined as JSON",
+"name": "production",
+"description": "This is a production environment defined as JSON",
 "chef_type": "environment",
 "json_class": "Chef::Environment",
 "default_attributes": {
