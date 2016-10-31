@@ -10,6 +10,7 @@
 },
 "override_attributes": {},
 "cookbook_versions": {
+"k" : "= 0.1.0"
 }
 }
 
