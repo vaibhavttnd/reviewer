@@ -6,7 +6,7 @@
 
 package 'ntp'
 
-cookbook_file '/et/ntp.conf' do
+cookbook_file '/etc/ntp.conf' do
   source 'ntp.conf'
   owner 'root'
   group 'root'

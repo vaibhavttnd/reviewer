@@ -16,9 +16,10 @@ template "/etc/apache2/sites-available/000-default.conf" do
      :servername => node["sites"]["servername"],
      :error_log => node['apache2_log']
    )
+notifies :restart, "service[apache2]", :immediately
 end
 
 service "apache2" do
-  action :restart
+  action :nothing
 end
 
