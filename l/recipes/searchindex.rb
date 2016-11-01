@@ -17,12 +17,12 @@ template "/tmp/grant#{result['ipaddress']}.sh" do
    )
 end
 
-execute 'my-cnf' do
+execute 'scp-script' do
 command "scp -i ~/Downloads/vg.pem /tmp/grant#{result['ipaddress']}.sh ubuntu@#{node['db']['ip']}:/tmp/grant#{result['ipaddress']}.sh"
-notifies :run, "execute[my-cnf]", :immediately
+notifies :run, "execute[permission]", :immediately
 end
 
-execute 'my-cnf' do
+execute 'permission' do
 command "ssh -i ~/Downloads/vg.pem ubuntu@#{node['db']['ip']} 'bash /tmp/grant#{result['ipaddress']}.sh'"
 action :nothing
 end

@@ -8,6 +8,6 @@ package 'git'
 
 git "/tmp/openssl" do
   repository "https://github.com/opscode-cookbooks/openssl"
-  checkout_branch "master"
+  revision "HEAD"
   action :sync
 end

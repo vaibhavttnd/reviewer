@@ -4,7 +4,7 @@ driver:
 
 provisioner:
   name: chef_zero
-  roles_path: '../roles'
+#  roles_path: '../roles'
 
 verifier:
   name: inspec
@@ -16,8 +16,8 @@ platforms:
 suites:
   - name: default
     run_list:
-       - role[webserver]
-#      - recipe[i::default]
+#       - role[webserver]
+      - recipe[i::default]
     verifier:
       inspec_tests:
         - test/recipes
